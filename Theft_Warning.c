@@ -4,8 +4,7 @@ volatile int call_stat=0;
 volatile int message_stat=0;
 void setup() 
 {
-  // put your setup code here, to run once:
-m.begin(9600);//gsm
+m.begin(9600);              //gsm
 Serial.begin(9600);
 pinMode(5,INPUT);
 pinMode(LED_BUILTIN, OUTPUT);
@@ -13,14 +12,13 @@ pinMode(6, OUTPUT);
 m.println("AT");
 delay(2000);
 }
-
 void loop() 
 {
   if(digitalRead(5))
   {
       digitalWrite(LED_BUILTIN, HIGH );
       delay(1000);
-      digitalWrite(5, HIGH );
+      digitalWrite(6,HIGH);
       delay(1000);
       if (call_stat==0)
       {
